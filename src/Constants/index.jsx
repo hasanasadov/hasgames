@@ -1,9 +1,5 @@
 export const navItems = [
     {
-      title: "Home",
-      path: "/",
-    },
-    {
       title: "Tic Tac Toe",
       path: "/Tic_Tac_Toe",
     },
@@ -18,5 +14,9 @@ export const navItems = [
     {
       title: "Click Test",
       path: "/Click",
+    },
+    {
+      title: "Password Generator",
+      path: "/PasswordGen",
     },
   ];

@@ -49,7 +49,7 @@ const Tic_Tac_Toe = () => {
     : `Next player: ${isXNext ? "X" : "O"}`;
 
   return (
-    <div className="flex justify-center items-center h-screen gap-4  bg-star text-white flex-col">
+    <div className="flex items-center justify-center  gap-4  bg-star text-white flex-col" style={{ height: "calc(100vh - 136px)" }}>
       <div className="text-6xl font-bold mb-4">Tic Tac Toe</div>
       <div className="flex flex-col">
         <div className="status text-center mb-4 font-bold text-2xl text-red-600">

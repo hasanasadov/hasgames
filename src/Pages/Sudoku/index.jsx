@@ -32,16 +32,17 @@ const Sudoku = () => {
     };
 
     return (
-        <div className="flex flex-col items-center p-4 bg-star">
+        <div className="flex flex-col items-center p-4 bg-star" style={{ height: 'calc(100vh - 136px)' }}>
             <div className="mb-4">
                 <label className="mr-2 text-white">Grid Size:</label>
                 <input 
                     type="number" 
                     value={size} 
                     onChange={handleSizeChange} 
-                    className="border p-1"
+                    className="border p-1 bg-inherit text-white text-center"
                     min="1"
                     max="16"
+                    
                 />
             </div>
             <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${size}, 1fr)` }}>
@@ -52,7 +53,7 @@ const Sudoku = () => {
                             type="text" 
                             value={cell} 
                             onChange={(e) => handleChange(e, rowIndex, colIndex)} 
-                            className="border p-2 text-center w-12 h-12"
+                            className="border p-2 text-center w-8 h-8"
                             maxLength="1"
                             color='white'
                         />

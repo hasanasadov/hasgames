@@ -18,16 +18,23 @@ export const Header = () => {
           <h1 className="text-white text-2xl font-bold">React Games</h1>
         </Link>
       </div>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 transition">
         <button className="text-white text-2xl md:hidden" onClick={toggleMenu}>
           &#9776;
         </button>
-        <div className={`md:flex hidden gap-5`}>
+        <div className={`md:flex transition-all  gap-5 ${isMenuOpen ? "hamburgerOpen" : "hidden"}`}>
+          <button className="text-white text-2xl md:hidden" onClick={toggleMenu}>
+            &#10006;
+          </button>
+          <NavLink to="/" className={`text-white text-4xl font-bold uppercase ${isMenuOpen ? "flex" : "hidden"}`} onClick={toggleMenu}>
+            Home
+          </NavLink>
           {navItems.map((navItem, idx) => {
             return (
               <NavLink
                 key={idx}
                 to={navItem.path}
+                onClick={isMenuOpen ? toggleMenu : undefined}
                 className={({ isActive }) =>
                   `text-white text-lg font-light uppercase ${
                     isActive && "text-purple-900 font-extrabold"

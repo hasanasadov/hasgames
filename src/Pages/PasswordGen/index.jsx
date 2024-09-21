@@ -46,7 +46,7 @@ const PasswordGen = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-star text-red-50 ">
+    <div className="flex flex-col items-center p-4 bg-star text-red-50 " style={{ height: "calc(100vh - 136px)" }}>
       <h1 className="text-2xl font-bold mb-4">Password Generator</h1>
       <div className="flex flex-col items-start justify-center p-4">
         <div className="mb-4">
@@ -112,8 +112,9 @@ const PasswordGen = () => {
           Generate Password
         </button>
         <div className="mt-4 flex items-center justify-between w-full ">
-          <h2 className="text-xl font-semibold mr-2">Generated Password:</h2>
-          <p className="p-2 border rounded mr-2">{password}</p>
+          <h2 className="text-lg font-semibold mr-2">Generated Password:</h2>
+          <p className="text-lg font-semibold break-all">{password}</p>
+          
           <button
             onClick={handleCopy}
             className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700"

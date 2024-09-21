@@ -15,10 +15,10 @@ import { Box, Button } from "@mui/joy";
 const HomePage = () => {
   return (
     <div className="w-full px-8 lg:px-60 mx-auto bg-star">
-      <h1 className="text-2xl font-extrabold mb-4 max-w-6xl text-white ">
+      <h1 className="text-2xl font-extrabold py-4 max-w-6xl text-white ">
         Select a Game
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         <Card sx={{ bgcolor: "transparent" }}>
           <div>
             <Typography
@@ -158,17 +158,18 @@ const HomePage = () => {
           <div>
             <Typography
               level="title-lg"
-              sx={{ color: "orangered", fontSize: "18px" }}
+              sx={{ color: "orangered", fontSize: "19px" }}
             >
-              Password Generator
+              Password
             </Typography>
             <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
               <Typography
                 level="body-sm"
                 fontSize={12}
-                sx={{ color: "white", opacity: "0.7" }}
+                //mobile text size decreses
+                sx={{ color: "white", opacity: "0.7"}}
               >
-                Generates Strong Password
+                Generates Password
               </Typography>
             </Box>
           </div>

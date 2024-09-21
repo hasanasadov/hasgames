@@ -10,6 +10,7 @@ import HomePage from "./Pages/Home/index.jsx";
 import Sudoku from "./Pages/Sudoku/index.jsx";
 import PasswordGen from "./Pages/PasswordGen/index.jsx";
 import ConnectFour from "./Pages/ConnectFour/index.jsx";
+import Click from "./Pages/Click/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "Click",
-        element: <div>Click Test</div>,
+        element: <Click />,
       },
       {
         path: "PasswordGen",

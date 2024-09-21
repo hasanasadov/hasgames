@@ -45,7 +45,7 @@ const MineField = () => {
     };
 
     return (
-        <div className="minefield">
+        <div className="minefield bg-star">
             {board.map((row, rowIndex) => (
                 <div key={rowIndex} className="row">
                     {row.map((cell, colIndex) => (

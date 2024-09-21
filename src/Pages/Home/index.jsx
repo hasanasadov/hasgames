@@ -4,48 +4,183 @@ import Tic_Tac_Img from "../../assets/tictac.png";
 import MineField_Img from "../../assets/minefield.png";
 import Sudoku_Img from "../../assets/sudoku.png";
 import Click_Img from "../../assets/click.png";
+import PasswordGen_Img from "../../assets/pass.png";
+import Connect4_Img from "../../assets/connect4.jpg";
+
+import AspectRatio from "@mui/joy/AspectRatio";
+import Card from "@mui/joy/Card";
+import Typography from "@mui/joy/Typography";
+import { Box, Button } from "@mui/joy";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col p-8 bg-gray-900 text-white">
-      <h1 className="text-2xl font-bold mb-4 max-w-6xl">Select a Game</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">
-        <Link
-          to="/Tic_Tac_Toe"
-          className="bg-primary text-white p-4 rounded-md block text-center w-full"
-        >
-          <div className="flex flex-col justify-between h-full gap-4 w-full">
-            <img className="w-full h-full" src={Tic_Tac_Img} alt="Tic Tac Toe" />
-            <h2 className="text-4xl font-semibold">Tic Tac Toe</h2>
+    <div className="w-full px-8 lg:px-60 mx-auto bg-star">
+      <h1 className="text-2xl font-extrabold mb-4 max-w-6xl text-white ">
+        Select a Game
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <Card sx={{ bgcolor: "transparent" }}>
+          <div>
+            <Typography
+              level="title-lg"
+              sx={{ color: "orangered", fontSize: "21px" }}
+            >
+              Tic Tac Toe
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+              <Typography
+                level="body-sm"
+                fontSize={12}
+                sx={{ color: "white", opacity: "0.7" }}
+              >
+                Connect 3 same symbol to win
+              </Typography>
+            </Box>
           </div>
-        </Link>
-        <Link
-          to="/MineField"
-          className="bg-primary text-white p-4 rounded-md block text-center"
-        >
-          <div className="flex flex-col justify-between h-full gap-4">
-            <img className="w-full h-full" src={MineField_Img} alt="Mine Field" />
-            <h2 className="text-4xl font-semibold">Mine Field</h2>
+          <AspectRatio ratio="1/1">
+            <img src={Tic_Tac_Img} loading="lazy" alt="" />
+          </AspectRatio>
+          <Link to="/Tic_Tac_Toe">
+            <Button color="neutral" sx={{ width: "100%" }}>
+              Play
+            </Button>
+          </Link>
+        </Card>
+        <Card sx={{ bgcolor: "transparent" }}>
+          <div>
+            <Typography
+              level="title-lg"
+              sx={{ color: "orangered", fontSize: "21px" }}
+            >
+              Connect 4
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+              <Typography
+                level="body-sm"
+                fontSize={12}
+                sx={{ color: "white", opacity: "0.7" }}
+              >
+                Connect 4 same color to win
+              </Typography>
+            </Box>
           </div>
-        </Link>
-        <Link
-          to="/Sudoku"
-          className="bg-primary text-white p-4 rounded-md block text-center"
-        >
-          <div className="flex flex-col justify-between h-full gap-4">
-            <img className="w-full h-full" src={Sudoku_Img} alt="Sudoku" />
-            <h2 className="text-4xl font-semibold">Sudoku</h2>
+          <AspectRatio ratio="1/1">
+            <img src={Connect4_Img} loading="lazy" alt="" />
+          </AspectRatio>
+          <Link to="/ConnectFour">
+            <Button color="neutral" sx={{ width: "100%" }}>
+              Play
+            </Button>
+          </Link>
+        </Card>
+        <Card sx={{ bgcolor: "transparent" }}>
+          <div>
+            <Typography
+              level="title-lg"
+              sx={{ color: "orangered", fontSize: "21px" }}
+            >
+              MineField
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+              <Typography
+                level="body-sm"
+                fontSize={12}
+                sx={{ color: "white", opacity: "0.7" }}
+              >
+                BOOM BOOM
+              </Typography>
+            </Box>
           </div>
-        </Link>
-        <Link
-          to="/Click"
-          className="bg-primary text-white p-4 rounded-md block text-center"
-        >
-          <div className="flex flex-col justify-between h-full gap-4 ">
-            <img className="w-full h-full" src={Click_Img} alt="Click" />
-            <h2 className="text-4xl font-semibold">Click test</h2>
+          <AspectRatio ratio="1/1">
+            <img src={MineField_Img} loading="lazy" alt="" />
+          </AspectRatio>
+          <Link to="/MineField">
+            <Button color="neutral" sx={{ width: "100%" }}>
+              Play
+            </Button>
+          </Link>
+        </Card>
+        <Card sx={{ bgcolor: "transparent" }}>
+          <div>
+            <Typography
+              level="title-lg"
+              sx={{ color: "orangered", fontSize: "21px" }}
+            >
+              Sudoku
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+              <Typography
+                level="body-sm"
+                fontSize={12}
+                sx={{ color: "white", opacity: "0.7" }}
+              >
+                9 x 9 Sudoku
+              </Typography>
+            </Box>
           </div>
-        </Link>
+          <AspectRatio ratio="1/1">
+            <img src={Sudoku_Img} loading="lazy" alt="" />
+          </AspectRatio>
+          <Link to="/Sudoku">
+            <Button color="neutral" sx={{ width: "100%" }}>
+              Play
+            </Button>
+          </Link>
+        </Card>
+        <Card sx={{ bgcolor: "transparent" }}>
+          <div>
+            <Typography
+              level="title-lg"
+              sx={{ color: "orangered", fontSize: "21px" }}
+            >
+              Click Test
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+              <Typography
+                level="body-sm"
+                fontSize={12}
+                sx={{ color: "white", opacity: "0.7" }}
+              >
+                Speed test
+              </Typography>
+            </Box>
+          </div>
+          <AspectRatio ratio="1/1">
+            <img src={Click_Img} loading="lazy" alt="" />
+          </AspectRatio>
+          <Link to="/Click">
+            <Button color="neutral" sx={{ width: "100%" }}>
+              Play
+            </Button>
+          </Link>
+        </Card>
+        <Card sx={{ bgcolor: "transparent" }}>
+          <div>
+            <Typography
+              level="title-lg"
+              sx={{ color: "orangered", fontSize: "18px" }}
+            >
+              Password Generator
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, mt: 1, alignItems: "center" }}>
+              <Typography
+                level="body-sm"
+                fontSize={12}
+                sx={{ color: "white", opacity: "0.7" }}
+              >
+                Generates Strong Password
+              </Typography>
+            </Box>
+          </div>
+          <AspectRatio ratio="1/1">
+            <img src={PasswordGen_Img} loading="lazy" alt="" />
+          </AspectRatio>
+          <Link to="/PasswordGen">
+            <Button color="neutral" sx={{ width: "100%" }}>
+              Play
+            </Button>
+          </Link>
+        </Card>
       </div>
     </div>
   );

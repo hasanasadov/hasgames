@@ -46,7 +46,7 @@ const PasswordGen = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className="flex flex-col items-center p-4 bg-star text-red-50 ">
       <h1 className="text-2xl font-bold mb-4">Password Generator</h1>
       <div className="flex flex-col items-start justify-center p-4">
         <div className="mb-4">
@@ -57,7 +57,7 @@ const PasswordGen = () => {
               value={length}
               onChange={(e) => setLength(e.target.value)}
               min="1"
-              className="ml-2 p-1 border rounded"
+              className="ml-2 p-1 border rounded bg-inherit"
             />
           </label>
         </div>
@@ -113,7 +113,7 @@ const PasswordGen = () => {
         </button>
         <div className="mt-4 flex items-center justify-between w-full ">
           <h2 className="text-xl font-semibold mr-2">Generated Password:</h2>
-          <p className="p-2 border rounded bg-gray-100 mr-2">{password}</p>
+          <p className="p-2 border rounded mr-2">{password}</p>
           <button
             onClick={handleCopy}
             className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700"

@@ -19,4 +19,8 @@ export const navItems = [
       title: "Password Generator",
       path: "/PasswordGen",
     },
+    {
+      title: "Connect Four",
+      path: "/ConnectFour",
+    },
   ];

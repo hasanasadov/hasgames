@@ -32,9 +32,9 @@ const Sudoku = () => {
     };
 
     return (
-        <div className="flex flex-col items-center p-4">
+        <div className="flex flex-col items-center p-4 bg-star">
             <div className="mb-4">
-                <label className="mr-2">Grid Size:</label>
+                <label className="mr-2 text-white">Grid Size:</label>
                 <input 
                     type="number" 
                     value={size} 
@@ -54,6 +54,7 @@ const Sudoku = () => {
                             onChange={(e) => handleChange(e, rowIndex, colIndex)} 
                             className="border p-2 text-center w-12 h-12"
                             maxLength="1"
+                            color='white'
                         />
                     ))
                 )}

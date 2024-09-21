@@ -4,11 +4,12 @@ import "./style/global.css";
 import Tic_Tac_Toe from "./Pages/Tic_Tac_Toe";
 import MineField from "./Pages/MineField";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./Comp/Root/index.jsx";
+import Root from "./Comp/root/index.jsx";
 import ErrorPage from "./Pages/ErrorPage/index.jsx";
 import HomePage from "./Pages/Home/index.jsx";
 import Sudoku from "./Pages/Sudoku/index.jsx";
 import PasswordGen from "./Pages/PasswordGen/index.jsx";
+import ConnectFour from "./Pages/ConnectFour/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,10 @@ const router = createBrowserRouter([
         path: "PasswordGen",
         element: <PasswordGen />,
       },
-      
+      {
+        path: "ConnectFour",
+        element: <ConnectFour />,
+      }
     ],
   },
 ]);

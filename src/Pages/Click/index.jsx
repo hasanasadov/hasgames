@@ -16,7 +16,7 @@ const Click = () => {
   ]);
   const [username, setUsername] = useState("");
   const timerRef = useRef(null);
-  const gameDuration = 15; // Game duration in seconds
+  const gameDuration = 15;
   const countdownRef = useRef(gameDuration);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Click = () => {
       const countdownInterval = setInterval(() => {
         countdownRef.current -= 1;
         if (countdownRef.current <= 0) {
-          handleStop(); // Stop the game after 15 seconds
+          handleStop();
         }
       }, 1000);
 
@@ -57,7 +57,6 @@ const Click = () => {
 
   const handleStop = () => {
     setIsPlaying(false);
-    // Save the score in high scores
     const newScores = [...highScores, { name: username , score }];
     setHighScores(newScores.sort((a, b) => b.score - a.score).slice(0, 3));
   };

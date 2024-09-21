@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Comp/Root/index.jsx";
 import ErrorPage from "./Pages/ErrorPage/index.jsx";
 import HomePage from "./Pages/Home/index.jsx";
+import Sudoku from "./Pages/Sudoku/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         path: "MineField",
         element: <MineField />,
       },
+      {
+        path: "Sudoku",
+        element: <Sudoku />,
+      },
+      
     ],
   },
 ]);

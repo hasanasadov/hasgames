@@ -16,7 +16,7 @@ export const Header = () => {
               to={navItem.path}
               className={({ isActive }) =>
                 `text-white text-lg font-light uppercase ${
-                  isActive && "text-purple-900"
+                  isActive && "text-purple-900  font-extrabold"
                 }`
               }
             >

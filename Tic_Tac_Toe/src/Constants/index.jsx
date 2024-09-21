@@ -1,6 +1,6 @@
 export const navItems = [
     {
-      title: "Games",
+      title: "Home",
       path: "/",
     },
     {
@@ -11,4 +11,12 @@ export const navItems = [
       title: "MineField",
       path: "/MineField",
     },    
+    {
+      title: "Sudoku",
+      path: "/Sudoku",
+    },
+    {
+      title: "Click Test",
+      path: "/Click",
+    },
   ];

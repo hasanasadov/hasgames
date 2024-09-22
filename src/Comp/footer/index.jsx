@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col  bg-star text-gray-300  text-center p-4">
+        <footer className="flex flex-col pt-4 bg-star text-gray-300  text-center p-4">
                 <p>
                     Created by{" "}
                     <a href="https://github.com/hasanasadov/">

@@ -15,18 +15,31 @@ export const Header = () => {
       <div className="flex items-center gap-x-3">
         <Link to="/" className="flex items-center gap-x-2">
           <img src={Logo} alt="logo" className="w-10 h-10" />
-          <h1 className="text-white text-2xl font-bold">React Games</h1>
+          <h1 className="text-white text-2xl font-bold">Has React Games</h1>
         </Link>
       </div>
       <div className="flex items-center gap-3 transition">
         <button className="text-white text-2xl md:hidden" onClick={toggleMenu}>
           &#9776;
         </button>
-        <div className={`md:flex transition-all  gap-5 ${isMenuOpen ? "hamburgerOpen" : "hidden"}`}>
-          <button className="text-white text-2xl md:hidden" onClick={toggleMenu}>
+        <div
+          className={`md:flex transition-all  gap-5 ${
+            isMenuOpen ? "hamburgerOpen" : "hidden"
+          }`}
+        >
+          <button
+            className="text-white text-2xl md:hidden"
+            onClick={toggleMenu}
+          >
             &#10006;
           </button>
-          <NavLink to="/" className={`text-white text-4xl font-bold uppercase ${isMenuOpen ? "flex" : "hidden"}`} onClick={toggleMenu}>
+          <NavLink
+            to="/"
+            className={`text-white text-4xl font-bold uppercase ${
+              isMenuOpen ? "flex" : "hidden"
+            }`}
+            onClick={toggleMenu}
+          >
             Home
           </NavLink>
           {navItems.map((navItem, idx) => {

@@ -11,22 +11,26 @@ const Click = () => {
   const [difficulty, setDifficulty] = useState("easy");
   const [score, setScore] = useState(0);
   const [dotPosition, setDotPosition] = useState({ top: 0, left: 0 });
-  const [highScores, setHighScores] = useState([
-    { name: "Break my record", score: 17 },
-  ]);
+  const [gamers, setGamers] = useState([]);
   const [username, setUsername] = useState("");
   const timerRef = useRef(null);
-  const gameDuration = 15;
-  const countdownRef = useRef(gameDuration);
+  const gameDuration = 10;
+  const [timeLeft, setTimeLeft] = useState(gameDuration);
+  const countdownRef = useRef(null);
 
   useEffect(() => {
     if (isPlaying) {
-      countdownRef.current = gameDuration;
-      const countdownInterval = setInterval(() => {
-        countdownRef.current -= 1;
-        if (countdownRef.current <= 0) {
-          handleStop();
-        }
+      setTimeLeft(gameDuration);
+
+      countdownRef.current = setInterval(() => {
+        setTimeLeft((prevTime) => {
+          if (prevTime <= 1) {
+            clearInterval(countdownRef.current);
+            handleStop();
+            return 0;
+          }
+          return prevTime - 1;
+        });
       }, 1000);
 
       timerRef.current = setInterval(() => {
@@ -35,7 +39,7 @@ const Click = () => {
 
       return () => {
         clearInterval(timerRef.current);
-        clearInterval(countdownInterval);
+        clearInterval(countdownRef.current);
       };
     }
   }, [isPlaying, difficulty]);
@@ -56,20 +60,26 @@ const Click = () => {
   };
 
   const handleStop = () => {
+    clearInterval(timerRef.current);
+    clearInterval(countdownRef.current);
     setIsPlaying(false);
-    const newScores = [...highScores, { name: username , score }];
-    setHighScores(newScores.sort((a, b) => b.score - a.score).slice(0, 3));
+
+    if (username) {
+      setGamers((prevGamers) => [
+        ...prevGamers,
+        { name: username, point: score },
+      ]);
+    }
   };
 
   const handleDotClick = () => {
-    setScore((prevScore) => prevScore + 1);
+    if (isPlaying) {
+      setScore((prevScore) => prevScore + 1);
+    }
   };
 
   return (
-    <div
-      className="flex flex-col justify-start items-center pt-5 bg-gray-100 bg-star text-white"
-      style={{ height: "calc(100vh - 36px)" }}
-    >
+    <div className="flex flex-col justify-start items-center pt-5 bg-gray-100 bg-star text-white">
       <h1 className="text-3xl mb-4 font-bold">Click the dot</h1>
       <div className="flex flex-col items-center">
         <div className="flex mb-4">
@@ -116,7 +126,7 @@ const Click = () => {
 
         <div className="border p-4 mb-4 w-64 text-center">
           <p className="text-red-500">Score: {score}</p>
-          <p className="text-gray-500">Time Left: {countdownRef.current} s</p>
+          <p className="text-gray-500">Time Left: {timeLeft} s</p>
         </div>
 
         <div
@@ -147,10 +157,10 @@ const Click = () => {
               </tr>
             </thead>
             <tbody>
-              {highScores.map((entry, index) => (
+              {gamers.map((gamer, index) => (
                 <tr key={index}>
-                  <td className="border px-4 py-2">{entry.name}</td>
-                  <td className="border px-4 py-2">{entry.score}</td>
+                  <td className="border px-4 py-2">{gamer.name}</td>
+                  <td className="border px-4 py-2">{gamer.point}</td>
                 </tr>
               ))}
             </tbody>

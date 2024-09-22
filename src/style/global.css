@@ -4,7 +4,7 @@
 
 .bg-star {
   background-image: url('../assets/stars.gif');
-  background-size: 500px;
+  background-size: 400px;
   background-repeat: repeat;
 }
 .hamburgerOpen{

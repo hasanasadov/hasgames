@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 const Tic_Tac_Toe = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -17,9 +17,11 @@ const Tic_Tac_Toe = () => {
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
+
       [0, 3, 6],
       [1, 4, 7],
       [2, 5, 8],
+
       [0, 4, 8],
       [2, 4, 6],
     ];
@@ -30,6 +32,7 @@ const Tic_Tac_Toe = () => {
         squares[a] === squares[b] &&
         squares[a] === squares[c]
       ) {
+        console.log(squares[a], squares[b], squares[c]);
         return squares[a];
       }
     }
@@ -49,7 +52,10 @@ const Tic_Tac_Toe = () => {
     : `Next player: ${isXNext ? "X" : "O"}`;
 
   return (
-    <div className="flex items-center justify-center  gap-4  bg-star text-white flex-col" style={{ height: "calc(100vh - 136px)" }}>
+    <div
+      className="flex items-center justify-center  gap-4  bg-star text-white flex-col"
+      style={{ height: "calc(100vh - 136px)" }}
+    >
       <div className="text-6xl font-bold mb-4">Tic Tac Toe</div>
       <div className="flex flex-col">
         <div className="status text-center mb-4 font-bold text-2xl text-red-600">

@@ -7,6 +7,7 @@ const MineField = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
+  
   const generateMinefield = () => {
     let newMinefield = [];
     for (let i = 0; i < size; i++) {

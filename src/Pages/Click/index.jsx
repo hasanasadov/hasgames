@@ -18,6 +18,8 @@ const Click = () => {
   const [timeLeft, setTimeLeft] = useState(gameDuration);
   const countdownRef = useRef(null);
 
+  //WHEN CLICKED STOP BUTTON SCORE IN TABLE IS TRUE BUT NOT TIME RUNS OUT ( SCORE IS 0 )
+
   useEffect(() => {
     if (isPlaying) {
       setTimeLeft(gameDuration);

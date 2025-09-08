@@ -1,26 +1,26 @@
 export const navItems = [
-    {
-      title: "Tic Tac Toe",
-      path: "/Tic_Tac_Toe",
-    },
-    {
-      title: "MineField",
-      path: "/MineField",
-    },    
-    {
-      title: "Sudoku",
-      path: "/Sudoku",
-    },
-    {
-      title: "Click Test",
-      path: "/Click",
-    },
-    {
-      title: "Password Generator",
-      path: "/PasswordGen",
-    },
-    {
-      title: "Connect Four",
-      path: "/ConnectFour",
-    },
-  ];
+  {
+    title: "Tic Tac Toe",
+    path: "/tictactoe",
+  },
+  {
+    title: "Connect Four",
+    path: "/connectfour",
+  },
+  {
+    title: "MineField",
+    path: "/minefield",
+  },
+  {
+    title: "Sudoku",
+    path: "/sudoku",
+  },
+  {
+    title: "Click Test",
+    path: "/click",
+  },
+  // {
+  //   title: "Password Generator",
+  //   path: "/passwordgen",
+  // },
+];

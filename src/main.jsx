@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import "./style/global.css";
 
-import Tic_Tac_Toe from "./Pages/Tic_Tac_Toe";
+import Tic_Tac_Toe from "./Pages/Tictactoe/index.jsx";
 import MineField from "./Pages/MineField";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Comp/root/index.jsx";
@@ -23,27 +23,27 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "Tic_Tac_Toe",
+        path: "tictactoe",
         element: <Tic_Tac_Toe />,
       },
       {
-        path: "MineField",
+        path: "minefield",
         element: <MineField />,
       },
       {
-        path: "Sudoku",
+        path: "sudoku",
         element: <Sudoku />,
       },
       {
-        path: "Click",
+        path: "click",
         element: <Click />,
       },
       {
-        path: "PasswordGen",
+        path: "passwordgen",
         element: <PasswordGen />,
       },
       {
-        path: "ConnectFour",
+        path: "connectfour",
         element: <ConnectFour />,
       }
     ],
